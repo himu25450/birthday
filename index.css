@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #06031d;
+}
+.bday,
+.name {
+  margin-top: 0.5em;
+  text-align: center;
+  background: linear-gradient(180deg, #f80112 0%, #2602f5 110%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  font-size: 5em;
+  font-family: bday;
+}
+.name {
+  font-size: 7.5em;
+}
+.wrapper {
+  position: relative;
+  width: 20em;
+  margin: 9.375em auto;
+  perspective: 45em;
+  margin-bottom: 31.25em;
+}
+.img-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateY(-360deg) translateZ(-18.75em);
+  animation: animate 25s steps(1000, end) infinite;
+}
+.single-img {
+  position: absolute;
+  width: 18.75em;
+  height: 12.5em;
+  top: 0.625em;
+  left: 0.625em;
+}
+.single-img img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+}
+.single-img.img-one {
+  transform: rotateY(0deg) translateZ(18.75em);
+}
+.single-img.img-two {
+  transform: rotateY(60deg) translateZ(18.75em);
+}
+.single-img.img-three {
+  transform: rotateY(120deg) translateZ(18.75em);
+}
+.single-img.img-four {
+  transform: rotateY(180deg) translateZ(18.75em);
+}
+.single-img.img-five {
+  transform: rotateY(240deg) translateZ(18.75em);
+}
+.single-img.img-six {
+  transform: rotateY(300deg) translateZ(18.75em);
+}
+img {
+  /* filter: grayscale(90%); */
+  transition: 1s;
+  cursor: pointer;
+}
+img:hover {
+  transition: 1s;
+  filter: grayscale(0);
+}
+@keyframes animate {
+  from {
+    transform: rotateY(-360deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+@font-face {
+  font-family: bday;
+  src: url(bday-font.ttf);
+}
+@media (max-width: 400px) {
+  .wrapper {
+    width: 10em;
+  }
+  .single-img {
+    position: absolute;
+    width: 9.375em;
+    height: 9.375em;
+    top: 0.625em;
+    left: 0.625em;
+  }
+  .bday,
+  .name {
+    font-size: 2em;
+    text-align: center;
+  }
+  .single-img.img-one {
+    transform: rotateY(0deg) translateZ(9.375em);
+  }
+  .single-img.img-two {
+    transform: rotateY(60deg) translateZ(9.375em);
+  }
+  .single-img.img-three {
+    transform: rotateY(120deg) translateZ(9.375em);
+  }
+  .single-img.img-four {
+    transform: rotateY(180deg) translateZ(9.375em);
+  }
+  .single-img.img-five {
+    transform: rotateY(240deg) translateZ(9.375em);
+  }
+  .single-img.img-six {
+    transform: rotateY(300deg) translateZ(9.375em);
+  }
+}
